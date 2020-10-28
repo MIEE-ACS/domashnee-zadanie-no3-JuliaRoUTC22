@@ -1,0 +1,32 @@
+﻿<Window x:Class="Wpf_homework_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_homework_3"
+        mc:Ignorable="d"
+        Title="Конвертер для шифрования текста при помощи шифра Цезаря." Height="450" Width="800">
+    <Grid Background="#FF8AD3E5" RenderTransformOrigin="0.279,0.461">
+        <Button x:Name="btn_code" Content="code" HorizontalAlignment="Left" Margin="66,206,0,0" VerticalAlignment="Top" Width="101" Click="btn_code_Click" Background="#FF27D94A" Height="43"/>
+
+        <TextBox x:Name="tbA" HorizontalAlignment="Left" Height="45" Margin="296,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="tbB" HorizontalAlignment="Left" Height="45" Margin="296,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="tbK" HorizontalAlignment="Left" Height="23" Margin="82,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Background="#FF9AD3E3"/>
+        <Label x:Name="lbl1" Content="Исходный текст:" HorizontalAlignment="Left" Margin="296,92,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl2" Content="Итоговый текст:" HorizontalAlignment="Left" Margin="296,202,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txt1" HorizontalAlignment="Left" Margin="26,25,0,0" TextWrapping="Wrap" Text="Программа шифрования подходит как для кирриллического, так и для латинского алфавитов." VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" Width="612" Height="23"/>
+        <TextBlock x:Name="txt2" HorizontalAlignment="Left" Margin="79,138,0,0" TextWrapping="Wrap" Text="Введите ключ:" VerticalAlignment="Top" FontStyle="Italic" FontSize="10"/>
+        <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="56,95,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF9CE3EA" ComboBox.SelectedIndex="0">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FF6BDCF7" Offset="0.375"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="Выберите язык:" IsEnabled="False"/>
+            <ComboBoxItem Content="русский"/>
+            <ComboBoxItem Content="английский"/>
+        </ComboBox>
+
+    </Grid>
+</Window>

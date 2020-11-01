@@ -26,8 +26,19 @@ namespace Wpf_homework_3
         private void btn_code_Click(object sender, RoutedEventArgs e)
         {
             string text = Convert.ToString(tbA.Text);
-          
-            int key = Convert.ToInt32(tbK.Text);
+
+            int key;
+            try
+            {
+                key = Convert.ToInt32(tbK.Text);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Некорректный ввод ключа. Пожалуйста, введите целое число.");
+                tbK.Clear();
+                return;
+            }
+
 
             if (key >= 0)
             {

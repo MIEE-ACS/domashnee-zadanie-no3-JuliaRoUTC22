@@ -7,16 +7,16 @@
         mc:Ignorable="d"
         Title="Конвертер для шифрования текста при помощи шифра Цезаря." Height="450" Width="800">
     <Grid Background="#FF8AD3E5" RenderTransformOrigin="0.279,0.461">
-        <Button x:Name="btn_code" Content="code" HorizontalAlignment="Left" Margin="66,206,0,0" VerticalAlignment="Top" Width="101" Click="btn_code_Click" Background="#FF27D94A" Height="43"/>
+        <Button x:Name="btn_code" Content="code" HorizontalAlignment="Left" Margin="510,156,0,0" VerticalAlignment="Top" Width="98" Click="btn_code_Click" Background="#FF27D94A" Height="42"/>
 
-        <TextBox x:Name="tbA" HorizontalAlignment="Left" Height="45" Margin="296,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
-        <TextBox x:Name="tbB" HorizontalAlignment="Left" Height="45" Margin="296,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
-        <TextBox x:Name="tbK" HorizontalAlignment="Left" Height="23" Margin="82,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Background="#FF9AD3E3"/>
-        <Label x:Name="lbl1" Content="Исходный текст:" HorizontalAlignment="Left" Margin="296,92,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl2" Content="Итоговый текст:" HorizontalAlignment="Left" Margin="296,202,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbA" HorizontalAlignment="Left" Height="45" Margin="266,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="tbB" HorizontalAlignment="Left" Height="45" Margin="266,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="tbK" HorizontalAlignment="Left" Height="23" Margin="79,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Background="#FF9AD3E3"/>
+        <Label x:Name="lbl1" Content="Исходный текст:" HorizontalAlignment="Left" Margin="266,77,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl2" Content="Итоговый текст:" HorizontalAlignment="Left" Margin="266,240,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="txt1" HorizontalAlignment="Left" Margin="26,25,0,0" TextWrapping="Wrap" Text="Программа шифрования подходит как для кирриллического, так и для латинского алфавитов." VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" Width="612" Height="23"/>
-        <TextBlock x:Name="txt2" HorizontalAlignment="Left" Margin="79,138,0,0" TextWrapping="Wrap" Text="Введите ключ:" VerticalAlignment="Top" FontStyle="Italic" FontSize="10"/>
-        <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="56,95,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF9CE3EA" ComboBox.SelectedIndex="0">
+        <TextBlock x:Name="txt2" HorizontalAlignment="Left" Margin="71,206,0,0" TextWrapping="Wrap" Text="Введите ключ:" VerticalAlignment="Top" FontStyle="Italic" FontSize="10"/>
+        <ComboBox x:Name="cmbx" HorizontalAlignment="Left" Margin="49,137,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF9CE3EA" ComboBox.SelectedIndex="0">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -27,6 +27,7 @@
             <ComboBoxItem Content="русский"/>
             <ComboBoxItem Content="английский"/>
         </ComboBox>
+        <Button x:Name="btn_decode" Content="decode" HorizontalAlignment="Left" Margin="510,224,0,0" VerticalAlignment="Top" Width="98" Background="#FFFF5555" Height="42" Click="btn_decode_Click"/>
 
     </Grid>
 </Window>

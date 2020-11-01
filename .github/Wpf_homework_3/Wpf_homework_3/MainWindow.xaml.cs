@@ -91,6 +91,74 @@ namespace Wpf_homework_3
 
         }
 
-     
+
+
+        private void btn_decode_Click(object sender, RoutedEventArgs e)
+        {
+            string text = Convert.ToString(tbA.Text);
+
+            int key;
+            try
+            {
+                key = Convert.ToInt32(tbK.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Некорректный ввод ключа. Пожалуйста, введите целое число.");
+                tbK.Clear();
+                return;
+            }
+
+
+            if (key >= 0)
+            {
+
+                const string alphabet_cyrillic = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+                const string alphabet_latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                string alphabet;
+                if (cmbx.SelectedIndex == 1)
+                {
+                    alphabet = alphabet_cyrillic;
+                }
+
+                else if (cmbx.SelectedIndex == 2)
+                {
+                    alphabet = alphabet_latin;
+                }
+
+                else
+                {
+                    MessageBox.Show("Язык не выбран! Пожалуйста, выберите язык.");
+                    return;
+                }
+
+                var fullAlphabet = alphabet + alphabet.ToLower();
+                var letterQuantity = fullAlphabet.Length;
+                var decode = "";
+                for (int i = 0; i < text.Length; i++)
+                {
+                    var symbol = text[i];
+                    var index = fullAlphabet.IndexOf(symbol);
+                    if (index < 0)
+                    {
+                        decode += symbol.ToString(); //если символ не найден, его не меняем
+                    }
+                    else
+                    {
+                        var code_Index = (letterQuantity + index - key) % letterQuantity;
+                        decode += fullAlphabet[code_Index];
+                    }
+                }
+
+                tbB.Text = String.Format($"{decode}");
+                tbB.IsReadOnly = true;
+            }
+            else
+            {
+                MessageBox.Show("Некорректно введён ключ! Сдвиг должен быть неотрицательным.");
+            }
+
+        }
     }
 }
